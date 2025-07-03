@@ -1,0 +1,14 @@
+#service.yaml for the Kubernetes service
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-web-app
+  labels:
+    app: go-web-app 
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: go-web-app
+  type: ClusterIP
